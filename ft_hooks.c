@@ -1,30 +1,26 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_init_mlx.c                                      :+:      :+:    :+:   */
+/*   ft_hooks.c                                         :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: vcastilh <vcastilh@student.42sp.org.br>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2022/02/18 18:49:54 by vcastilh          #+#    #+#             */
-/*   Updated: 2022/02/19 12:37:51 by vcastilh         ###   ########.fr       */
+/*   Created: 2022/02/19 12:38:17 by vcastilh          #+#    #+#             */
+/*   Updated: 2022/02/19 14:43:49 by vcastilh         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "fractol.h"
 
-void	ft_init_mlx(t_mlx *mlx, t_fractal *fractal)
+int	ft_key_hook(int key, t_mlx *mlx)
 {
-	mlx->mlx_ptr = mlx_init();
-	if (mlx->mlx_ptr == NULL)
-		exit(1);
-	mlx->win_ptr = mlx_new_window(mlx->mlx_ptr, WIDTH, HEIGHT, fractal->name);
-	if (mlx->win_ptr == NULL)
+	if (key == 65307)
 	{
+		mlx_destroy_window(mlx->mlx_ptr, mlx->win_ptr);
+		mlx_destroy_display(mlx->win_ptr);
 		free(mlx->win_ptr);
-		exit(1);
+		free(mlx);
+		exit(0);
 	}
-	mlx->img = mlx_new_image(mlx->mlx_ptr, IMG_WIDTH, IMG_HEIGHT);
-	mlx->img_addr = (char *)mlx_get_data_addr(mlx->img, &mlx->bpp, &mlx->line_size,
-			&mlx->endian);
+	return (0);
 }
-

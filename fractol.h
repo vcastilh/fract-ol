@@ -6,7 +6,7 @@
 /*   By: vcastilh <vcastilh@student.42sp.org.br>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/02/16 07:36:36 by vcastilh          #+#    #+#             */
-/*   Updated: 2022/02/19 08:55:37 by vcastilh         ###   ########.fr       */
+/*   Updated: 2022/02/19 14:40:48 by vcastilh         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,8 +16,10 @@
  # define HEIGHT 500
  # define IMG_WIDTH 500
  # define IMG_HEIGHT 500
- # define MAX_ITER 2000
+ # define MAX_ITER 300
  # define DIVERGENCE 3
+ # define KEYPRESS 2
+ # define ESC 65307
  # include <unistd.h>
  # include "libft.h"
  # include "mlx.h"
@@ -63,4 +65,5 @@ void		ft_win_to_view_m(t_fractal *fractal, int i, int j);
 void		ft_win_to_view_j(t_fractal *fractal, int i, int j);
 int			ft_color(int t);
 void		ft_pixel_to_image(t_mlx *mlx, int i, int j, int clr);
+int			ft_key_hook(int key, t_mlx *mlx);
 #endif

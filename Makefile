@@ -6,7 +6,7 @@
 #    By: vcastilh <vcastilh@student.42sp.org.br>    +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2022/02/07 17:41:34 by vcastilh          #+#    #+#              #
-#    Updated: 2022/02/19 08:29:07 by vcastilh         ###   ########.fr        #
+#    Updated: 2022/02/19 14:42:11 by vcastilh         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -21,6 +21,7 @@ SRC = main.c \
 	  ft_win_to_view_m.c \
 	  ft_win_to_view_j.c \
 	  ft_pixel_to_image.c \
+	  ft_hooks.c \
 
 
 CC =clang
