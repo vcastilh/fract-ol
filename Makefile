@@ -6,7 +6,7 @@
 #    By: vcastilh <vcastilh@student.42sp.org.br>    +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2022/02/07 17:41:34 by vcastilh          #+#    #+#              #
-#    Updated: 2022/02/19 14:42:11 by vcastilh         ###   ########.fr        #
+#    Updated: 2022/02/19 15:27:00 by vcastilh         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -25,13 +25,13 @@ SRC = main.c \
 
 
 CC =clang
-CFLAGS = -Wall -Wextra -Werror -g3 -fsanitize=address  -I. -I./libft -I./minilibx-linux -c
+CFLAGS = -Wall -Wextra -Werror -g3 -I. -I./libft -I./minilibx-linux -c
 OBJS = $(SRC:%.c=%.o)
 #LIBFTDIR = libft
 
 all: $(NAME)
 $(NAME): LIBFTDIR MLX $(OBJS) 
-	$(CC) $(OBJS) -o $(NAME) -fsanitize=address  -Llibft -lft -I./libft -Lminilibx-linux -lmlx -L/usr/lib -Iminilibx-linux -lXext -lX11 -lm -lz
+	$(CC) $(OBJS) -o $(NAME) -Llibft -lft -I./libft -Lminilibx-linux -lmlx -L/usr/lib -Iminilibx-linux -lXext -lX11 -lm -lz
 $(OBJS): $(SRC)
 	$(CC) $(CFLAGS) $(SRC)
 LIBFTDIR:

@@ -6,7 +6,7 @@
 /*   By: vcastilh <vcastilh@student.42sp.org.br>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/02/16 07:36:36 by vcastilh          #+#    #+#             */
-/*   Updated: 2022/02/19 14:40:48 by vcastilh         ###   ########.fr       */
+/*   Updated: 2022/02/19 15:58:14 by vcastilh         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,7 +16,7 @@
  # define HEIGHT 500
  # define IMG_WIDTH 500
  # define IMG_HEIGHT 500
- # define MAX_ITER 300
+ # define MAX_ITER 80
  # define DIVERGENCE 3
  # define KEYPRESS 2
  # define ESC 65307
