@@ -6,7 +6,7 @@
 /*   By: vcastilh <vcastilh@student.42sp.org.br>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/02/16 07:24:26 by vcastilh          #+#    #+#             */
-/*   Updated: 2022/02/19 22:07:35 by vcastilh         ###   ########.fr       */
+/*   Updated: 2022/02/20 14:17:58 by vcastilh         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,7 +16,6 @@
 int	main(int argc, char **argv)
 {
 	t_fractal	fractal;
-	t_mlx		mlx;
 
 	if (argc < 2)
 	{
@@ -30,16 +29,19 @@ int	main(int argc, char **argv)
 		exit(1);
 	}
 	ft_set_fractal(argv, &fractal);
-	ft_init_mlx(&mlx, &fractal);
+	ft_init_mlx(&fractal);
 	if (argv[1][0] == 'M')
-		ft_mandelbrot(&fractal, &mlx);
+		ft_mandelbrot(&fractal);
 	else if (argv[1][0] == 'J')
-		ft_julia(&fractal, &mlx);
+		ft_julia(&fractal);
 	//printf("re: %Lf\t im: %Lf\t", fractal.c.re, fractal.c.im);
-	mlx_put_image_to_window(mlx.mlx_ptr, mlx.win_ptr, mlx.img, 0, 0);
-	mlx_hook(mlx.win_ptr, KEYPRESS, 1L << 0, ft_key_hook, &mlx);
-	mlx_expose_hook(mlx.win_ptr, ft_expose_hook, &mlx);
-	mlx_loop(mlx.mlx_ptr);
+	mlx_put_image_to_window(fractal.mlx.mlx_ptr, fractal.mlx.win_ptr,
+			fractal.mlx.img, 0, 0);
+	//mlx_expose_hook(fractal.mlx.win_ptr, ft_expose_hook, &fractal);
+	mlx_mouse_hook(fractal.mlx.win_ptr, ft_mouse_hook, &fractal);
+	mlx_key_hook(fractal.mlx.win_ptr, ft_key_hook, &fractal);
+	//mlx_hook(fractal.mlx.win_ptr, KEYPRESS, 1L << 0, ft_key_hook, &fractal);
+	mlx_loop(fractal.mlx.mlx_ptr);
 	return (0);
 }
 

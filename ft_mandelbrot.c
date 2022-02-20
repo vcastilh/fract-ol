@@ -6,13 +6,13 @@
 /*   By: vcastilh <vcastilh@student.42sp.org.br>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/02/18 18:39:01 by vcastilh          #+#    #+#             */
-/*   Updated: 2022/02/19 08:03:08 by vcastilh         ###   ########.fr       */
+/*   Updated: 2022/02/20 13:50:24 by vcastilh         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "fractol.h"
 
-void	ft_mandelbrot(t_fractal *fractal, t_mlx *mlx)
+void	ft_mandelbrot(t_fractal *fractal)
 {
 	int	i;
 	int	j;
@@ -35,7 +35,7 @@ void	ft_mandelbrot(t_fractal *fractal, t_mlx *mlx)
 				fractal->z.mdl = pow(fractal->z.re, 2) + pow(fractal->z.im, 2);
 				iter++;
 			}
-			ft_pixel_to_image(mlx, i, j, ft_color(iter));
+			ft_pixel_to_image(fractal, i, j, ft_color(iter));
 			j++;
 		}
 		i++;
