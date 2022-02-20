@@ -6,7 +6,7 @@
 /*   By: vcastilh <vcastilh@student.42sp.org.br>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/02/19 12:38:17 by vcastilh          #+#    #+#             */
-/*   Updated: 2022/02/19 16:36:00 by vcastilh         ###   ########.fr       */
+/*   Updated: 2022/02/19 20:19:38 by vcastilh         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -22,5 +22,12 @@ int	ft_key_hook(int key, t_mlx *mlx)
 		free(mlx->mlx_ptr);
 		exit(0);
 	}
+	return (0);
+}
+
+int	ft_expose_hook(t_mlx *mlx)
+{
+	//mlx_do_sync(mlx->mlx_ptr);
+	mlx_put_image_to_window(mlx->mlx_ptr, mlx->win_ptr, mlx->img, 0, 0);
 	return (0);
 }

@@ -6,11 +6,11 @@
 #    By: vcastilh <vcastilh@student.42sp.org.br>    +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2022/02/07 17:41:34 by vcastilh          #+#    #+#              #
-#    Updated: 2022/02/19 15:27:00 by vcastilh         ###   ########.fr        #
+#    Updated: 2022/02/19 18:13:16 by vcastilh         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
-NAME = fractal
+NAME = fractol
 SRC = main.c \
 	  ft_set_fractal.c \
 	  ft_init_mlx.c \

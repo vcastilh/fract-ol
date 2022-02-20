@@ -6,7 +6,7 @@
 /*   By: vcastilh <vcastilh@student.42sp.org.br>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/02/16 07:36:36 by vcastilh          #+#    #+#             */
-/*   Updated: 2022/02/19 15:58:14 by vcastilh         ###   ########.fr       */
+/*   Updated: 2022/02/19 21:25:18 by vcastilh         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -66,4 +66,5 @@ void		ft_win_to_view_j(t_fractal *fractal, int i, int j);
 int			ft_color(int t);
 void		ft_pixel_to_image(t_mlx *mlx, int i, int j, int clr);
 int			ft_key_hook(int key, t_mlx *mlx);
+int			ft_expose_hook(t_mlx *mlx);
 #endif

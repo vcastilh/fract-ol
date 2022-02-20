@@ -6,7 +6,7 @@
 /*   By: vcastilh <vcastilh@student.42sp.org.br>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/02/16 07:24:26 by vcastilh          #+#    #+#             */
-/*   Updated: 2022/02/19 15:39:24 by vcastilh         ###   ########.fr       */
+/*   Updated: 2022/02/19 22:07:35 by vcastilh         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -38,6 +38,7 @@ int	main(int argc, char **argv)
 	//printf("re: %Lf\t im: %Lf\t", fractal.c.re, fractal.c.im);
 	mlx_put_image_to_window(mlx.mlx_ptr, mlx.win_ptr, mlx.img, 0, 0);
 	mlx_hook(mlx.win_ptr, KEYPRESS, 1L << 0, ft_key_hook, &mlx);
+	mlx_expose_hook(mlx.win_ptr, ft_expose_hook, &mlx);
 	mlx_loop(mlx.mlx_ptr);
 	return (0);
 }
