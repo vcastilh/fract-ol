@@ -6,7 +6,7 @@
 /*   By: vcastilh <vcastilh@student.42sp.org.br>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/02/19 12:38:17 by vcastilh          #+#    #+#             */
-/*   Updated: 2022/02/21 04:13:16 by vcastilh         ###   ########.fr       */
+/*   Updated: 2022/02/21 05:08:06 by vcastilh         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -38,7 +38,7 @@ void	ft_zoom(int key, int x, int y, t_fractal *fractal)
 
 	scale.x_ratio = (double)x / WIDTH;
 	scale.y_ratio = (double)y / HEIGHT;
-	if (key == 5)
+	if (key == ZOOM_IN)
 	{
 		fractal->delta.re = (1.05 * fractal->delta.re) - fractal->delta.re;
 		fractal->delta.im = (1.05 * fractal->delta.im) - fractal->delta.im;
@@ -62,12 +62,12 @@ void	ft_zoom(int key, int x, int y, t_fractal *fractal)
 
 int	ft_mouse_hook(int key, int x, int y, t_fractal *fractal)
 {
-	if (key == 5)
+	if (key == ZOOM_IN)
 	{
 		ft_zoom(key, x, y, fractal);
 		ft_check_fractal(fractal);
 	}
-	if (key == 4)
+	if (key == ZOOM_OUT)
 	{
 		ft_zoom(key, x, y, fractal);
 		ft_check_fractal(fractal);
