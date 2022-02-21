@@ -1,0 +1,12 @@
+====How To run this projetc====
+
+Available parameters: 
+
+./fractol Mandelbrot
+./fractol Julia real imaginary
+
+example: ./fractol Julia -0.428 -0.580
+
+The Mandelbrot set, do not require a complex number via cli
+You must add a complex number via cli to Julia
+The first letter of sets must be capitalized

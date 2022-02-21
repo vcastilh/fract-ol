@@ -6,12 +6,11 @@
 /*   By: vcastilh <vcastilh@student.42sp.org.br>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/02/16 07:24:26 by vcastilh          #+#    #+#             */
-/*   Updated: 2022/02/21 10:58:09 by vcastilh         ###   ########.fr       */
+/*   Updated: 2022/02/21 11:05:59 by vcastilh         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "fractol.h"
-#include <stdio.h>
 
 int	main(int argc, char **argv)
 {
