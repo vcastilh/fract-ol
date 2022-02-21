@@ -6,7 +6,7 @@
 /*   By: vcastilh <vcastilh@student.42sp.org.br>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/02/18 18:37:29 by vcastilh          #+#    #+#             */
-/*   Updated: 2022/02/18 18:38:16 by vcastilh         ###   ########.fr       */
+/*   Updated: 2022/02/21 04:38:25 by vcastilh         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,10 +16,10 @@ int	ft_color(int t)
 {
 	int	r;
 	int	g;
-	int b;
+	int	b;
 
 	r = (int)(9 * (1 - t) * pow(t, 3) * 150);
 	g = (int)(15 * pow((1 - t), 2) * pow(t, 2) * 255);
 	b = (int)(8.5 * pow((1 - t), 3) * t * 80);
-	return ((int)(t << 24 | r << 16 | g << 8 | b));
+	return ((int)t << 24 | r << 16 | g << 8 | b);
 }
