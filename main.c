@@ -6,7 +6,7 @@
 /*   By: vcastilh <vcastilh@student.42sp.org.br>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/02/16 07:24:26 by vcastilh          #+#    #+#             */
-/*   Updated: 2022/02/21 04:14:51 by vcastilh         ###   ########.fr       */
+/*   Updated: 2022/02/21 05:22:07 by vcastilh         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -34,6 +34,7 @@ int	main(int argc, char **argv)
 	mlx_expose_hook(fractal.mlx.win_ptr, ft_expose_hook, &fractal);
 	mlx_mouse_hook(fractal.mlx.win_ptr, ft_mouse_hook, &fractal);
 	mlx_key_hook(fractal.mlx.win_ptr, ft_key_hook, &fractal);
+	mlx_hook(fractal.mlx.win_ptr, 33, (1L << 17), ft_cross_hook, &fractal);
 	mlx_loop(fractal.mlx.mlx_ptr);
 	return (0);
 }
