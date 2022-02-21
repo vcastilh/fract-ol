@@ -6,7 +6,7 @@
 /*   By: vcastilh <vcastilh@student.42sp.org.br>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/02/16 07:36:36 by vcastilh          #+#    #+#             */
-/*   Updated: 2022/02/21 05:07:32 by vcastilh         ###   ########.fr       */
+/*   Updated: 2022/02/21 10:59:34 by vcastilh         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -26,6 +26,7 @@
 # include "libft.h"
 # include "mlx.h"
 # include <math.h>
+# include <fcntl.h>
 
 typedef struct s_complex
 {
@@ -83,4 +84,5 @@ int			ft_expose_hook(t_fractal *fractal);
 void		ft_zoom(int key, int x, int y, t_fractal *fractal);
 int			ft_mouse_hook(int key, int x, int y, t_fractal *fractal);
 void		ft_check_fractal(t_fractal *fractal);
+int			ft_cross_hook(t_fractal *fractal);
 #endif

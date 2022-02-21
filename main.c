@@ -6,7 +6,7 @@
 /*   By: vcastilh <vcastilh@student.42sp.org.br>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/02/16 07:24:26 by vcastilh          #+#    #+#             */
-/*   Updated: 2022/02/21 05:22:07 by vcastilh         ###   ########.fr       */
+/*   Updated: 2022/02/21 10:58:09 by vcastilh         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -20,22 +20,25 @@ int	main(int argc, char **argv)
 	if (argc < 2)
 	{
 		ft_usage();
-		exit(1);
+		return (1);
 	}
-	else if (ft_strncmp(argv[1], "Mandelbrot", 11) != 0
-		&& (ft_strncmp(argv[1], "Julia", 6) == 0 && argc < 4))
+	else if ((ft_strncmp(argv[1], "Mandelbrot", 11) == 0 && argc == 2)
+		|| (ft_strncmp(argv[1], "Julia", 6) == 0 && argc == 4))
+	{
+		ft_set_fractal(argv, &fractal);
+		ft_init_mlx(&fractal);
+		ft_check_fractal(&fractal);
+		mlx_expose_hook(fractal.mlx.win_ptr, ft_expose_hook, &fractal);
+		mlx_mouse_hook(fractal.mlx.win_ptr, ft_mouse_hook, &fractal);
+		mlx_key_hook(fractal.mlx.win_ptr, ft_key_hook, &fractal);
+		mlx_hook(fractal.mlx.win_ptr, 33, (1L << 17), ft_cross_hook, &fractal);
+		mlx_loop(fractal.mlx.mlx_ptr);
+	}
+	else
 	{
 		ft_usage();
-		exit(1);
+		return (1);
 	}
-	ft_set_fractal(argv, &fractal);
-	ft_init_mlx(&fractal);
-	ft_check_fractal(&fractal);
-	mlx_expose_hook(fractal.mlx.win_ptr, ft_expose_hook, &fractal);
-	mlx_mouse_hook(fractal.mlx.win_ptr, ft_mouse_hook, &fractal);
-	mlx_key_hook(fractal.mlx.win_ptr, ft_key_hook, &fractal);
-	mlx_hook(fractal.mlx.win_ptr, 33, (1L << 17), ft_cross_hook, &fractal);
-	mlx_loop(fractal.mlx.mlx_ptr);
 	return (0);
 }
 
@@ -51,5 +54,19 @@ void	ft_check_fractal(t_fractal *fractal)
 
 void	ft_usage(void)
 {
-	write(1, "Error\n", 6);
+	char	*str;
+	int		fd;
+
+	fd = open("message.txt", O_RDONLY);
+	if (fd < 0)
+		return ;
+	while (1)
+	{
+		str = ft_get_next_line(fd);
+		if (!str)
+			break ;
+		ft_putstr_fd(str, 1);
+		free(str);
+	}
+	close(fd);
 }

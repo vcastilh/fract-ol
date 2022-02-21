@@ -6,7 +6,7 @@
 /*   By: vcastilh <vcastilh@student.42sp.org.br>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/02/19 12:38:17 by vcastilh          #+#    #+#             */
-/*   Updated: 2022/02/21 05:20:20 by vcastilh         ###   ########.fr       */
+/*   Updated: 2022/02/21 08:56:53 by vcastilh         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -77,10 +77,10 @@ int	ft_mouse_hook(int key, int x, int y, t_fractal *fractal)
 
 int	ft_cross_hook(t_fractal *fractal)
 {
-		mlx_destroy_image(fractal->mlx.mlx_ptr, fractal->mlx.img);
-		mlx_destroy_window(fractal->mlx.mlx_ptr, fractal->mlx.win_ptr);
-		mlx_destroy_display(fractal->mlx.mlx_ptr);
-		free(fractal->mlx.mlx_ptr);
-		exit(0);
-		return (0);
+	mlx_destroy_image(fractal->mlx.mlx_ptr, fractal->mlx.img);
+	mlx_destroy_window(fractal->mlx.mlx_ptr, fractal->mlx.win_ptr);
+	mlx_destroy_display(fractal->mlx.mlx_ptr);
+	free(fractal->mlx.mlx_ptr);
+	exit(0);
+	return (0);
 }

@@ -6,7 +6,7 @@
 #    By: vcastilh <vcastilh@student.42sp.org.br>    +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2022/02/07 17:41:34 by vcastilh          #+#    #+#              #
-#    Updated: 2022/02/19 18:13:16 by vcastilh         ###   ########.fr        #
+#    Updated: 2022/02/21 09:58:48 by vcastilh         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -24,21 +24,18 @@ SRC = main.c \
 	  ft_hooks.c \
 
 
-CC =clang
-CFLAGS = -Wall -Wextra -Werror -g3 -I. -I./libft -I./minilibx-linux -c
+CC = gcc
+CFLAGS = -Wall -Wextra -Werror -g3 -O3 -I. -I./libft -I./minilibx-linux -c
 OBJS = $(SRC:%.c=%.o)
-#LIBFTDIR = libft
-
+LIBFTDIR = libft
+MLXDIR = minilibx-linux
 all: $(NAME)
-$(NAME): LIBFTDIR MLX $(OBJS) 
-	$(CC) $(OBJS) -o $(NAME) -Llibft -lft -I./libft -Lminilibx-linux -lmlx -L/usr/lib -Iminilibx-linux -lXext -lX11 -lm -lz
+$(NAME):  $(OBJS) 
+	make -C libft
+	make -C minilibx-linux
+	$(CC) $(OBJS) -Llibft -lft -I./libft -Lminilibx-linux -lmlx -L/usr/lib -Iminilibx-linux -lXext -lX11 -lm -lz -o $(NAME)
 $(OBJS): $(SRC)
 	$(CC) $(CFLAGS) $(SRC)
-LIBFTDIR:
-	make -C libft 
-#	make -C clean libft
-MLX:
-	make -C minilibx-linux
 clean:
 	rm -rf $(OBJS)
 fclean: clean

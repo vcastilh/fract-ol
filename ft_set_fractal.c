@@ -6,7 +6,7 @@
 /*   By: vcastilh <vcastilh@student.42sp.org.br>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/02/18 18:57:23 by vcastilh          #+#    #+#             */
-/*   Updated: 2022/02/21 04:02:13 by vcastilh         ###   ########.fr       */
+/*   Updated: 2022/02/21 10:56:04 by vcastilh         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -23,6 +23,7 @@ void	ft_set_fractal(char **argv, t_fractal *fractal)
 	else if (argv[1][0] == 'J')
 	{
 		fractal->name = argv[1];
-		fractal->c = ft_complex(ft_atold(argv[2]), ft_atold(argv[3]));
+		fractal->c.re = ft_atold(argv[2]);
+		fractal->c.im = ft_atold(argv[3]);
 	}
 }
