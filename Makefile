@@ -6,7 +6,7 @@
 #    By: vcastilh <vcastilh@student.42sp.org.br>    +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2022/02/07 17:41:34 by vcastilh          #+#    #+#              #
-#    Updated: 2022/02/21 09:58:48 by vcastilh         ###   ########.fr        #
+#    Updated: 2022/02/21 11:11:52 by vcastilh         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -38,6 +38,9 @@ $(OBJS): $(SRC)
 	$(CC) $(CFLAGS) $(SRC)
 clean:
 	rm -rf $(OBJS)
+	make clean -C libft
+	make clean -C minilibx-linux 
 fclean: clean
 	rm -rf $(NAME)
+	make fclean -C libft
 re: fclean all

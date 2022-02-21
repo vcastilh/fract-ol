@@ -6,7 +6,7 @@
 /*   By: vcastilh <vcastilh@student.42sp.org.br>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/02/16 07:36:36 by vcastilh          #+#    #+#             */
-/*   Updated: 2022/02/21 10:59:34 by vcastilh         ###   ########.fr       */
+/*   Updated: 2022/02/21 11:15:44 by vcastilh         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -51,7 +51,6 @@ typedef struct s_fractal
 	t_mlx		mlx;
 	t_complex	c;
 	t_complex	z;
-	t_complex	pow;
 	t_complex	max;
 	t_complex	min;
 	t_complex	delta;
@@ -66,7 +65,6 @@ typedef struct s_scale
 {
 	long double	x_ratio;
 	long double	y_ratio;
-	t_complex	new_delta;
 }	t_scale;
 
 void		ft_usage(void);
