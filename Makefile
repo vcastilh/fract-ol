@@ -25,7 +25,7 @@ SRC = main.c \
 
 
 CC = gcc
-CFLAGS = -Wall -Wextra -Werror -g3 -O3 -I. -I./libft -I./minilibx-linux -c
+CFLAGS = -Wall -Wextra -Werror -O3 -I. -I./libft -I./minilibx-linux -c
 OBJS = $(SRC:%.c=%.o)
 LIBFTDIR = libft
 MLXDIR = minilibx-linux
