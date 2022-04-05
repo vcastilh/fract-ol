@@ -33,7 +33,7 @@ all: $(NAME)
 $(NAME):  $(OBJS) 
 	make -C libft
 	make -C minilibx-linux
-	$(CC) $(OBJS) -Llibft -lft -I./libft -Lminilibx-linux -lmlx -L/usr/lib -Iminilibx-linux -lXext -lX11 -lm -lz -o $(NAME)
+	$(CC) $(OBJS) -Llibft -lft -I./libft -Lminilibx-linux -lmlx -L/usr/lib -Iminilibx-linux -lXext -lX11 -lm -o $(NAME)
 $(OBJS): $(SRC)
 	$(CC) $(CFLAGS) $(SRC)
 clean:
