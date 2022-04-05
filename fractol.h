@@ -84,4 +84,5 @@ int			ft_mouse_hook(int key, int x, int y, t_fractal *fractal);
 void		ft_check_fractal(t_fractal *fractal);
 int			ft_cross_hook(t_fractal *fractal);
 int			ft_valid_argv(char *argv);
+double		normalize(int t);
 #endif

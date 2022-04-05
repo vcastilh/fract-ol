@@ -17,9 +17,19 @@ int	ft_color(int t)
 	int	r;
 	int	g;
 	int	b;
+	double	norm_t;
 
-	r = (int)(9 * (1 - t) * pow(t, 3) * 150);
-	g = (int)(15 * pow((1 - t), 2) * pow(t, 2) * 255);
-	b = (int)(8.5 * pow((1 - t), 3) * t * 80);
-	return ((int)t << 24 | r << 16 | g << 8 | b);
+	norm_t = normalize(t);
+	r = (int)(9 * (1 - norm_t) * pow(norm_t, 3) * 150);
+	g = (int)(15 * pow((1 - norm_t), 2) * pow(norm_t, 2) * 255);
+	b = (int)(8.5 * pow((1 - norm_t), 3) * norm_t * 80);
+	return ((int)norm_t << 24 | r << 16 | g << 8 | b);
+}
+
+double	normalize(int t)
+{
+	double res;
+
+	res = (double)t / (double)MAX_ITER;
+	return (res);
 }
